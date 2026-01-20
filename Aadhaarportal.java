@@ -1,0 +1,71 @@
+import java.util.*;
+class Aadhaarportal
+{
+	private String name,loc;
+	private long contact,anumber;
+	static Scanner sc=new Scanner(System.in);
+	
+	public Aadhaarportal(String name,String loc,long contact,long anumber){
+		this.name=name;
+		this.loc=loc;
+		this.contact=contact;
+		this.anumber=anumber;
+	}
+	
+	public String getName(){
+		return name;
+	}
+	
+	public void setName(String name){
+		if(doVerification()){
+			this.name=name;
+			System.out.println("Verification Successfull!!! Name upadted!!!");
+			return;
+		}
+		System.out.println("Verification failed, So Name not updated");
+	}
+	
+	public String getLoc(){
+		return loc;
+	}
+	
+	public void setLoc(String loc){
+		if(doVerification()){
+			this.loc=loc;
+			System.out.println("Verification Successfull!!! Location upadted!!!");
+			return;
+		}
+		System.out.println("Verification failed, So Location not updated");
+	}
+	
+	public long getContact(){
+		return contact;
+	}
+	
+	public void setContact(long contact){
+		if(doVerification()){
+			this.contact=contact;
+			System.out.println("Verification Successfull!!! Contact upadted!!!");
+			return;
+		}
+		System.out.println("Verification failed, So Contact not updated");
+	}
+	
+	public long getAnumber(){
+		return anumber;
+	}
+	
+	public boolean doVerification(){
+		System.out.println("Enter Contact Number of "+name);
+		long user_contact=sc.nextLong();
+		if(contact==user_contact){
+			int otp=(int)(Math.random()*9999+9999);
+			System.out.println("OTP:"+otp);
+			System.out.println("Enter the otp:");
+			int gen_otp=sc.nextInt();
+			if(otp==gen_otp) return true;
+		}
+		return false;
+	}
+	
+}
