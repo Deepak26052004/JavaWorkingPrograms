@@ -1,0 +1,15 @@
+class Car1obj 
+{
+	public static void main(String[] args) 
+	{
+		Engine1 e1=new Engine1("600cc","300hp","Diesel",4);
+		Engine1 e2=new Engine1("800cc","200hp","Petrol",6);
+		Engine1 e3=new Engine1("400cc","500hp","Battery",8);
+		Car1 c1=new Car1("Maaruthi","White",7200000,e1);
+		Car1 c2=new Car1("BMW","Black",76200000,e2);
+		Car1 c3=new Car1("Suzuki","Red",200000,e3);
+		c1.detailsOfCar();
+		c2.detailsOfCar();
+		c3.detailsOfCar();
+	}
+}
