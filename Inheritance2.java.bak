@@ -1,0 +1,19 @@
+class Inheritance 
+{
+	static int x=10;
+	public static void  m1(){
+		System.out.println("Class 1 Printing");
+	}
+}
+
+class Inheritance2 extends Inheritance
+{
+	static int y=10;
+	public static void m2(){
+		System.out.println("Class 2 Printing");
+	}
+	public static void main(String [] args){
+		System.out.println(x);
+		m1();
+	}
+}
