@@ -1,0 +1,34 @@
+class Showroom 
+{
+	private String mgr,branch;
+	private Car1 [] cars;
+	
+	private Showroom(String mgr,String branch,Car1[] cars){
+		this.mgr=mgr;
+		this.branch=branch;
+		this.cars=cars;
+	}
+	
+	public String getMgr(){
+		return mgr;
+	}
+	
+	public String getBranch(){
+		return branch;
+	}
+	
+	public Car1[] getCars(){
+		return cars;
+	}
+	public static Showroom getShowRoomDetails(String mgr,String branch,Car1[] cars){
+		return new Showroom(mgr,branch,cars);
+	}
+	
+	public void detailsOfShowRoom()
+	{
+		System.out.println("Showroom Details!!!");
+		System.out.println("Manager Name:"+mgr);
+		System.out.println("Branch Name:"+branch);
+		System.out.println("Total Cars Available:"+getCars().length);
+	}
+}

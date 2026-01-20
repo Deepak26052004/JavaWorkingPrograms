@@ -1,0 +1,15 @@
+class Student1obj 
+{
+	public static void main(String[] args) 
+	{
+		Student1 s1=Student1.getStudent1Obj(103,"Deepak");
+		Student1 s2=Student1.getStudent1Obj(106,"Akash");
+		Student1 s3=Student1.getStudent1Obj(109,"Deep");
+		System.out.println(s1.getSid());
+		System.out.println(s1.getSname());
+		System.out.println(s1);
+		System.out.println(s2);
+		System.out.println(s3);
+		
+	}
+}

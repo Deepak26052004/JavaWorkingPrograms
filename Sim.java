@@ -1,0 +1,47 @@
+class Sim 
+{
+	private String operator_name,band_width;
+	private double price;
+	
+	private Sim(String operator_name,String band_width,double price){
+		this.operator_name=operator_name;
+		this.band_width=band_width;
+		this.price=price;
+	}
+	public static Sim getSimObj(String operator_name,String band_width,double price){
+		return new Sim(operator_name,band_width,price);
+	}
+	
+	public String getOperatorName(){
+		return operator_name;
+	}
+	
+	public void setOperatorName(String operator_name)
+	{
+		this.operator_name=operator_name;
+	}
+	
+	public String getBandWidth(){
+		return band_width;
+	}
+	
+	public void setBandWidth(String band_width)
+	{
+		this.band_width=band_width;
+	}
+	
+	public double getPrice(){
+		return price;
+	}
+	
+	public void setPrice(double price)
+	{
+		this.price=price;
+	}
+	public void displaySimDetails() {
+        System.out.println("----- Sim Details -----");
+        System.out.println("Operator Name: " + operator_name);
+        System.out.println("Band Width: " + band_width);
+        System.out.println("Price: " + price);
+    }
+}

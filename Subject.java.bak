@@ -1,0 +1,10 @@
+class Subject 
+{
+	String subject_code,subject_name;
+	int credits;
+	
+	Subject(String subject_code, String subject_name, int credits){
+		this.subject_code=subject_code;
+		this.subject_name=name;
+		this.credits=credits;
+}
