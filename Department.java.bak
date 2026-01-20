@@ -1,0 +1,17 @@
+class Department 
+{
+	String deptName,hod;
+	Professor[] professor;
+	
+	Department(String deptName,String hod,Professor[] professor){
+		this.deptName=deptName;
+		this.hod=hod;
+		this.professor=professor;
+	}
+	
+	public void detalisOfDepartment(){
+		System.out.println("Department Details");
+		System.out.println("DepartMent Name:"+deptName);
+		System.out.println("HOD Name:"+hod);
+	}
+}

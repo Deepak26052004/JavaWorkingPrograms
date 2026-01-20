@@ -1,0 +1,11 @@
+class Deepak
+{
+	public static void main(String[] args) 
+	{
+		Room3 r3=new Room3();
+		System.out.println("Before Setting:"+r3.getDeepak());
+		r3.setDeepak(100);
+		System.out.println("After Setting:"+r3.getDeepak());
+		
+	}
+}
