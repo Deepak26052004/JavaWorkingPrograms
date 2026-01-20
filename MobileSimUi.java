@@ -1,0 +1,82 @@
+import java.util.*;
+public class MobileSimUi {
+    static Scanner sc = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        System.out.println("===== Create Your Mobile =====");
+        System.out.print("Enter Mobile Name: ");
+        String mName = sc.nextLine();
+        System.out.print("Enter Storage: ");
+        String storage = sc.nextLine();
+        System.out.print("Enter Mobile Price: ");
+        double mPrice = sc.nextDouble();
+        sc.nextLine();
+
+        Mobile m = Mobile.getMobileObj(mName, mPrice, storage);
+
+        System.out.println("\n===== Create Your Sim =====");
+        System.out.print("Enter Operator Name: ");
+        String opName = sc.nextLine();
+        System.out.print("Enter Band Width: ");
+        String band = sc.nextLine();
+        System.out.print("Enter Sim Price: ");
+        double sPrice = sc.nextDouble();
+
+        Sim s = Sim.getSimObj(opName, band, sPrice);
+
+        boolean flag = true;
+        while (flag) {
+            System.out.println("\n===== MENU =====");
+            System.out.println("1. Insert Sim");
+            System.out.println("2. Remove Sim");
+            System.out.println("3. Check Slot Empty or Not");
+            System.out.println("4. Show Sim Details");
+            System.out.println("5. Show Mobile Details");
+            System.out.println("6. Update Sim Details ");
+            System.out.println("7. Update Mobile Details");
+            System.out.println("8. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = sc.nextInt();
+            sc.nextLine();
+
+            switch (choice) {
+                case 1 -> m.insertSim(s);
+                case 2 -> m.removeSim();
+                case 3 -> System.out.println(m.isSlotEmpty() ? "Yes, Slot is Empty" : "No, Slot is Full");
+                case 4 -> s.displaySimDetails();
+                case 5 -> m.displayMobileDetails();
+                case 6 -> updateSimDetails(s);
+                case 7 -> updateMobileDetails(m);
+                case 8 -> {
+                    flag = false;
+                    System.out.println("Exiting... Thank you!");
+                }
+                default -> System.out.println("Invalid choice!");
+            }
+        }
+    }
+
+    public static void updateSimDetails(Sim s) {
+        System.out.println("---- Update Sim Details ----");
+        System.out.print("Enter new Operator Name: ");
+        s.setOperatorName(sc.nextLine());
+        System.out.print("Enter new Band Width: ");
+        s.setBandWidth(sc.nextLine());
+        System.out.print("Enter new Price: ");
+        s.setPrice(sc.nextDouble());
+        sc.nextLine();
+        System.out.println("Sim details updated successfully!");
+    }
+
+    public static void updateMobileDetails(Mobile m) {
+        System.out.println("---- Update Mobile Details ----");
+        System.out.print("Enter new Mobile Name: ");
+        m.setMobileName(sc.nextLine());
+        System.out.print("Enter new Storage: ");
+        m.setStorage(sc.nextLine());
+        System.out.print("Enter new Price: ");
+        m.setPrice(sc.nextDouble());
+        sc.nextLine();
+        System.out.println("Mobile details updated successfully!");
+    }
+}

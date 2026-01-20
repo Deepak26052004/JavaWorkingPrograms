@@ -1,0 +1,75 @@
+class Mobile 
+{
+	private String mobile_name,storage;
+	private double price;
+	//Lazy Instantiation
+	private Sim slot;
+	
+	private Mobile(String mobile_name, double price, String storage){
+		this.mobile_name=mobile_name;
+		this.price=price;
+		this.storage=storage;
+	}
+	
+	public static Mobile getMobileObj(String mobile_name, double price, String storage){
+		return new Mobile(mobile_name,price,storage);
+	}
+	
+	public String getMobileName(){
+		return mobile_name;
+	}
+	
+	public void setMobileName(String mobile_name){
+		this.mobile_name=mobile_name;
+	}
+	
+	public double getPrice(){
+		return price;
+	}
+	
+	public void setPrice(double price){
+		this.price=price;
+	}
+	
+	public String getStorage(){
+		return storage;
+	}
+	
+	public void setStorage(String storage){
+		this.storage=storage;
+	}
+	
+	public void insertSim(Sim sim){
+		if(slot ==null){
+			slot=sim;
+			System.out.println(slot.getOperatorName()+" Added");
+		}
+		else{
+			System.out.println(slot.getOperatorName()+" Already Filled");
+		}
+	}
+	
+	public void removeSim(){
+		if(slot != null){
+			slot=null;
+			System.out.println("Sim removed");
+		}
+		else{
+			System.out.println("Already Sim Removed");
+		}
+	}
+	
+	public boolean isSlotEmpty(){
+		return slot==null;
+	}
+	
+	public void displayMobileDetails() {
+        System.out.println("----- Mobile Details -----");
+        System.out.println("Mobile Name: " + mobile_name);
+        System.out.println("Storage: " + storage);
+        System.out.println("Price: " + price);
+    }
+		
+	
+	
+}

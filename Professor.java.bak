@@ -1,0 +1,19 @@
+class Professor 
+{
+	String profName;
+	double salary;
+	Subject s;
+	
+	Professor(String profName,double salary, Subject s){
+		this.profName=profName;
+		this.salary=salary;
+		this.s=s;
+	}
+	
+	public void detailsOfProfessor(){
+		System.out.println("Professor Details");
+		System.out.println("Professor Name:"+profName);
+		System.out.println("Professor Salary:"+salary);
+		s.detalisOfSubject();
+	}
+}
